@@ -35,7 +35,7 @@ for i in range(means.shape[0]):
         sigma2 = vars[i, j]
         log_p_x_c += -0.5 * np.log(2 * np.pi * sigma2) - ((x - mu) ** 2) / (2 * sigma2)
     
-    # log(P(C|X)) proportional score
+    # log(P(C|X)) proportional scores
     p_c_x[i] = np.log(priors[i]) + log_p_x_c
 
 label = classes[np.argmax(p_c_x)]
